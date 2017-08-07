@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html style="position:relative; min-height:100%;">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Convert regular text to emojipasta.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--Favicon-->
+	<!--Credit:https://realfavicongenerator.net/-->
+	<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png?v=0">
+	<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png?v=0">
+	<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png?v=0">
+	<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png?v=0">
+	<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png?v=0">
+	<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png?v=0">
+	<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png?v=0">
+	<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png?v=0">
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png?v=0">
+	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=0" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png?v=0" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png?v=0" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=0" sizes="16x16">
+	<link rel="manifest" href="/favicons/manifest.json?v=0">
+	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=0" color="#dc143c">
+	<link rel="shortcut icon" href="/favicons/favicon.ico?v=0">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png?v=0">
+	<meta name="msapplication-config" content="/favicons/browserconfig.xml?v=0">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--Fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+
+	<!--Style-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<style>
+		
+	</style>
+
+	<!--Javascript-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="index.js"></script>
+
+	<title>
+		😂 E M O J I 😂
+	</title>
+</head>
+
+<body>
+	<div style="margin-top:20vh;"></div>
+	<h1 id="intro-text">Convert text to emojipasta.</h1>
+
+	<div ng-app="mainApp" ng-cloak>
+	    <div class="container" ng-controller="mainController">
+	        <div class="row">
+	            <textarea class="col-md-6 col-sm-12 col-xs-12" id="textinput" placeholder="Enter Text" ng-model="input" data-ng-trim="false"></textarea>
+	            <div class="col-md-6 col-sm-12 col-xs-12" id="output"><span ng-if="!input" id="output-placeholder">Converted Emojipasta</span><img src="copyicon.png" id="copybutton" title="copy emojipasta"></img><span id="emojipasta">{{convertToEmojipasta(input)}}</span></div>
+	        </div>
+	    </div>
+	</div>
+
+	<div id="copynotification">
+        <span>Emojipasta copied to clipboard!</span>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#Browser_compatibility" target="_blank" style="display:block;font-size:14px;color:crimson;text-align:center;">didn't work? compatibility issue.</a>
+    </div>
+
+	<footer class="footer">
+		<div class="container">
+			<p>Created by <a href="" target="_blank">Sumanth Kodali.</a> Special thanks to <a href="https://www.linkedin.com/in/lhsiung" target="_blank">Lawrence Hsiung</a> for additional emoji mappings.</p>
+			<p>Made possible by <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>, <a href="https://jquery.com/" target="_blank">JQuery</a>, <a href="https://angularjs.org/" target="_blank">AngularJS</a>, and <a href="https://github.com/muan/emojilib" target="_blank">emojilib.</a></p>
+			<p><a" target="_blank">Github Repo</a></p>
+		</div>
+	</footer>
+
+	<!-- only used for debugging -->
+	<span id="json"></span>
+	<!-- only used for debugging -->
+</body>
+</html>
